@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pablo-orange: #DD4A22;
+  --color-pablo-red: #C0392B;
+  --color-pablo-burnt: #E85D04;
+  --color-pablo-gold: #F5A623;
+  --color-pablo-cream: #F2E8DC;
+  --color-pablo-bone: #FAF0E6;
+  --color-pablo-dark: #1A1A1A;
+  --color-pablo-charcoal: #2C2C2C;
+  --color-pablo-blue: #2D5BFF;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+::selection {
+  background-color: #DD4A22;
+  color: white;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #DD4A22;
+  border-radius: 4px;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Glitch text effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* Chat messages scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message-enter {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Vinyl spin */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Pulse border */
+@keyframes pulse-border {
+  0%, 100% { border-color: #DD4A22; }
+  50% { border-color: #F5A623; }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
